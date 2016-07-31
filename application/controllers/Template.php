@@ -12,7 +12,18 @@ class Template extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('template');
+    	
+
+		if(!$this->session->userdata('log_sess')){
+    		$this->load->view('template.php');
+    	}else{
+    		$log_sess =  $this->session->userdata('log_sess');
+    		if ($log_sess->ACCOUNT_TYPE == "Administrator"){
+    			redirect('admin/Dashboard');
+    		}
+    	}
+
+    	
 	}
 
 }

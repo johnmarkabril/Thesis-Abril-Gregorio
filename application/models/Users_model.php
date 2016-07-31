@@ -6,21 +6,29 @@ if (!defined('BASEPATH'))
 class Users_model extends CI_Model
 {
 
-	public $table			= 'users';
+	public $table			= 'user';
 	public $user_id			= 'USER_ID';
-	public $user_password	= 'USER_PASSWORD';
-	public $user_active		= 'USER_ACTIVE';
-	public $user_email		= 'USER_EMAIL';
+	public $password		= 'PASSWORD';
+	public $activated		= 'ACTIVATED';
+	public $email			= 'EMAIL';
+	public $acc_type		= 'ACCOUNT_TYPE';
 
 	function __construct()
 	{
 		parent::__construct();
 	}
 
-	function getuserbyemailpass($user_email,$user_password)
-	{
-		$this->db->where($this->user_email, $user_email);
-		$this->db->where($this->user_password, $user_password);
-		return $this->db->get($this->table)->row();
+	function check_email_pass($c_email, $c_password){
+		// " SELECT * FROM users WHERE EMAIL = '$c_email' AND PASSWORD = '$c_password' "
+		$row = 	$this->db->where($this->email, $c_email)
+				 		 ->where($this->password, md5($c_password))
+				  		 ->limit(1)
+				 		 ->get($this->table);
+
+		if($row->num_rows() > 0){
+			return $row->row();
+		}else{
+			return false;
+		}
 	}
 }

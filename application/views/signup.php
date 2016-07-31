@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <h3><center>Register an account</center></h3>
+                <h3 style="color:#337ab7;"><center><strong>REGISTER AN ACCOUNT</strong></center></h3>
                 <hr/>
                 <form>
                     <div class="form-group">
