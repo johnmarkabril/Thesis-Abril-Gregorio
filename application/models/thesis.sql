@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2016 at 11:44 AM
+-- Generation Time: Jul 31, 2016 at 10:37 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -27,18 +27,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user` (
-  `USER_ID` varchar(32) NOT NULL,
-  `EMAIL` varchar(100) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
+  `EMAIL` varchar(255) NOT NULL,
   `PASSWORD` varchar(50) NOT NULL,
-  `ACCOUNT_TYPE` varchar(50) NOT NULL
+  `ACCOUNT_TYPE` varchar(50) NOT NULL,
+  `REG_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ACTIVATED` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`USER_ID`, `EMAIL`, `PASSWORD`, `ACCOUNT_TYPE`) VALUES
-('c4ca4238a0b923820dcc509a6f75849b', 'b737bd4db77076ee035d8889e188baeb', '2b057c4e7cb5a44a96ed8a807794f8aa', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `user` (`USER_ID`, `EMAIL`, `PASSWORD`, `ACCOUNT_TYPE`, `REG_TIME`, `ACTIVATED`) VALUES
+(1, 'johnmarkabril@gmail.com', '34c87211821751f911c058bbf0cfb822', 'Administrator', '2016-07-31 06:13:37', 0);
 
 --
 -- Indexes for dumped tables
@@ -50,6 +52,15 @@ INSERT INTO `user` (`USER_ID`, `EMAIL`, `PASSWORD`, `ACCOUNT_TYPE`) VALUES
 ALTER TABLE `user`
   ADD PRIMARY KEY (`USER_ID`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,16 @@
+DATABASE NAME : thesis
+
+
+To update your user accounts
+
+	- Go to localhost/phpmyadmin
+	- In the navigation bar, locate User accounts then click it.
+	- Click Add user account 
+	- User name : thesis
+	- Host name : localhost
+	- Password  : locate application/config/database nandun yung password
+	- then check GLOBAL PRIVILEGES
+	- then at the right bottom of the page, click GO
+
+	- Create a database name thesis and import thesis.sql
+	
