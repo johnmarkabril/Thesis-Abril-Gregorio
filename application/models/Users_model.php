@@ -22,6 +22,7 @@ class Users_model extends CI_Model
 		// " SELECT * FROM users WHERE EMAIL = '$c_email' AND PASSWORD = '$c_password' "
 		$row = 	$this->db->where($this->email, $c_email)
 				 		 ->where($this->password, md5($c_password))
+				 		 ->where($this->activated, 0)
 				  		 ->limit(1)
 				 		 ->get($this->table);
 

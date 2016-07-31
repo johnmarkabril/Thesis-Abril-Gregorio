@@ -17,7 +17,7 @@ class Login extends CI_Controller
 		$this->form_validation->set_rules('login_password','Password','required');
 
 		if($this->form_validation->run() == FALSE){
-			$this->load->view('template.php');
+			redirect('/');
 		}else{
 			$c_email = set_value('login_email');
 			$c_password = set_value('login_password');
@@ -25,7 +25,7 @@ class Login extends CI_Controller
 			// print_r($valid);
 			if($valid != false){
 				$this->session->set_userdata('log_sess',$valid);
-				redirect('admin/Dashboard');
+				redirect('template');
 			}else{
 				redirect('/');		
 			}

@@ -5,12 +5,8 @@
 	</head>
 	<body>
 		
-		<?php 
-			if($this->uri->segment(1) == "") {
-				$this->load->view('guest/home_content.php');
-			}
-		 ?>
-
+		<h1>ADMINISTRATOR</h1>
+		<?php $this->load->view('admin/dashboard.php'); ?>
         <!-- JS FILES  -->
 		<?php $this->load->view('common/js/js_files_includes.php'); ?>
 	</body>
