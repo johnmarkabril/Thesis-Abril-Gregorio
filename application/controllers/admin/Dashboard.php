@@ -7,9 +7,9 @@ class Dashboard extends CI_Controller
 	public function __construct()
     {
         parent::__construct();
-        $this->load->library('session');
-        if(!$this->session->userdata('log_sess')){
-        	redirect('/');
+        $log_sess = $this->session->userdata('log_sess');
+        if($log_sess->ACCOUNT_TYPE != 'Administrator'){
+            redirect('/');
         }
     }
 

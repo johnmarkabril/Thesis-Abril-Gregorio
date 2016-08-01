@@ -16,11 +16,11 @@ class Template extends CI_Controller
     	}else{
     		$log_sess =  $this->session->userdata('log_sess');
     		if ($log_sess->ACCOUNT_TYPE == "Administrator"){              // GO TO CONTROLLER ADMIN
-    			redirect('admin');
-    		}else if ($log_sess->ACCOUNT_TYPE == "Client"){               // GO TO CONTROLLER CLIENT
-                redirect('client');
+    			redirect('admin/dashboard');
+    		}else if ($log_sess->ACCOUNT_TYPE == "User"){                 // GO TO CONTROLLER CLIENT
+                redirect('user/dashboard');
             }else if ($log_sess->ACCOUNT_TYPE == "Agent"){                // GO TO CONTROLLER AGENT
-                redirect('agent');
+                redirect('agent/dashboard');
             }
     	}
 	}

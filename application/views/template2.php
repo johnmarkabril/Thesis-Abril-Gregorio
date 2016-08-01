@@ -4,9 +4,12 @@
 		<?php $this->load->view('common/css/css_files_includes.php'); ?>
 	</head>
 	<body>
+
+		<?php $this->load->view('common/navtop_admin.php'); ?>
+		<?php $this->load->view('common/navside_admin.php'); ?>
+
+
 		
-		<h1>ADMINISTRATOR</h1>
-		<?php $this->load->view('admin/dashboard.php'); ?>
         <!-- JS FILES  -->
 		<?php $this->load->view('common/js/js_files_includes.php'); ?>
 	</body>

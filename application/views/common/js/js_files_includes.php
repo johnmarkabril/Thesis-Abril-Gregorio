@@ -9,14 +9,17 @@
 	
 	// TOOLTIP
 	$(function () {
-		$('[data-toggle="tooltip"]').tooltip()
+		$('[data-toggle="tooltip"]').tooltip();
+		$(document).on('hover', '[rel=tooltip]', function () { $(this).tooltip('show'); });
+		$(document).on('focus', '[rel=tooltip]', function () { $(this).tooltip('show'); });
 	})
+	// END OF TOOLTIP
 
 	// POPOVER
 	$(function () {
 	  	$('[data-toggle="popover"]').popover()
 	})
+	// END OF POPOVER
 
 	
-
 </script>
